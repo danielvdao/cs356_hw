@@ -31,10 +31,9 @@ while 1:
     recv_split = recv_sentence.split()
     #number = int(recv_split[-1])
     
-    number = unpack('!L', recv_sentence)[0] 
-    print 'Client sent message: ' + str(number)
-    send_sentence = 'Hi Client, your number with 1 added is ' + str(number)
-
+#    number = unpack('!L', recv_sentence)[0] 
+    print 'Client sent message: ' + str(recv_split)
+    send_sentence = 'hello' + '\n' + 'test'
     # if i want to communicate with client, i want to use the connection socket
     connectionSocket.send(send_sentence)
     connectionSocket.close()
