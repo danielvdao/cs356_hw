@@ -5,6 +5,7 @@ from random import randint
 serverPort = [35601, 35602, 35603]
 serverIP = '128.83.144.56'
 
+# creating a client socket 
 clientSocket = socket(AF_INET, SOCK_STREAM)
 clientSocket.connect((serverIP, serverPort[0]))
 
@@ -41,28 +42,42 @@ recv_arr.append(recv_msg)
 recv_msg = clientSocket.recv(1024)
 recv_arr.append(recv_msg)
 
+# error handling to check for OK 
 if recv_arr[1].split()[0] != 'OK':
     print 'OK MESSAGE NOT RECEIVED'
     sys.exit(1)
 
+# printing the message and removing the \n character 
 print msg[:-1]
 print ''.join(recv_arr)[:-1]
 
+# parsing for the server number and the client number, like exercise 0 
 response_parse = recv_arr[1].split()
 server_num = int(response_parse[3])
 client_num = int(response_parse[1])
 
-#psock initiating connection to server
+#psock accepting connections now 
 newsock, addr = psock.accept()
+
+# read in the message from the cs356 server 
 cs_server_response = newsock.recv(1024).split()
+
+# parsed for int 
 new_value =  int(cs_server_response[-1])
 
 print 'CS 356 server sent ' + str(new_value)
 new_msg = str(server_num + 1) + ' ' + str(new_value + 1) + '\n'
+
+# sent the message including the new random number 
 newsock.send(new_msg) 
+
+# closing the sockets 
 newsock.close()
 psock.close()
 
+# receiving the last message from the client socket 
 print clientSocket.recv(1024)
+
+# closing the client socket 
 clientSocket.close()
 

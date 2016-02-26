@@ -1,0 +1,20 @@
+Lab Assignment 0
+
+Exercise 0: Four-way handshake
+aero.cs.utexas.edu
+Client -> Server: ex0 128.83.144.56-35601 128.83.120.146-35644 4809 D.V.Dao
+Server -> Client: CS 356 Server Thu Feb 25 21:31:05 CST 2016
+Server -> Client: OK 4810 D.V.Dao 7678999
+Client -> Server: ex0 4810 7679000
+Server -> Client: CS 356 Server Thu Feb 25 21:31:05 CST 2016 OK 7679000
+
+Exercise 1: Listening for a new connection
+
+aero.cs.utexas.edu
+Client -> Server: ex1 128.83.144.56-35601 128.83.120.146-35647 8387 D.V.Dao
+Server -> Client: CS 356 Server Thu Feb 25 21:35:32 CST 2016
+Server -> Client: OK 8388 D.V.Dao 4255335
+Server -> Client: Connected to a client(128.83.120.146-35647)
+Server -> Client: CS 356 server calling 1666949
+Client -> Server(servernum+1 newservernum+1): 4255336 1666950
+Server -> Client: OK    6683287

@@ -57,8 +57,12 @@ recv_msg = clientSocket.recv(1024)
 if 'OK' not in recv_msg.split():
     print 'OK MESSAGE NOT RECEIVED'
     sys.exit(1)
-# strip \n character
+# strip \n character and print the ack message sent
 print ack_string[:-1]
+
+# print the message that was received 
 print recv_msg[:-1]
+
+# strip the number from the received message and add 1 to it 
 print int(recv_msg[:-1].split()[-1]) + 1
 clientSocket.close()
