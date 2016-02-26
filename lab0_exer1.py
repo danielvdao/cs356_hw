@@ -48,7 +48,17 @@ response_parse = recv_arr[1].split()
 server_num = int(response_parse[3])
 client_num = int(response_parse[1])
 
+#psock initiating connection to server
 newsock, addr = psock.accept()
-print newsock.recv(1024)
-clientSocket.close()
+cs_server_response = newsock.recv(1024).split()
+new_value =  int(cs_server_response[-1])
+
+print 'CS 356 server sent ' + str(new_value)
+new_msg = str(server_num + 1) + ' ' + str(new_value + 1) + '\n'
+newsock.send(new_msg) 
+newsock.close()
 psock.close()
+
+print clientSocket.recv(1024)
+clientSocket.close()
+
