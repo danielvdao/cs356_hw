@@ -41,6 +41,10 @@ recv_arr.append(recv_msg)
 recv_msg = clientSocket.recv(1024)
 recv_arr.append(recv_msg)
 
+if recv_arr[1].split()[0] != 'OK':
+    print 'OK MESSAGE NOT RECEIVED'
+    sys.exit(1)
+
 print msg[:-1]
 print ''.join(recv_arr)[:-1]
 

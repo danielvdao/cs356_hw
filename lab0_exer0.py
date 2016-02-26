@@ -1,6 +1,7 @@
 from socket import socket, AF_INET, SOCK_STREAM
 from struct import pack, unpack
 from random import randint 
+import sys
 
 # host port and IP 
 serverPort = [35601, 35602, 35603]
@@ -33,6 +34,11 @@ recv_arr.append(recv_msg)
 recv_msg = clientSocket.recv(1024) 
 recv_arr.append(recv_msg)
 
+# if the OK message is not received 
+if recv_arr[1].split()[0] != 'OK':
+    print 'OK MESSAGE NOT RECEIVED'
+    sys.exit(1)
+
 # strip \n character
 print msg[:-1]
 print ''.join(recv_arr)[:-1]
@@ -48,6 +54,9 @@ ack_string = 'ex0' + ' ' + str(client_num) + ' ' + str(server_num + 1) + '\n'
 clientSocket.send(ack_string)
 recv_msg = clientSocket.recv(1024)
 
+if 'OK' not in recv_msg.split():
+    print 'OK MESSAGE NOT RECEIVED'
+    sys.exit(1)
 # strip \n character
 print ack_string[:-1]
 print recv_msg[:-1]
