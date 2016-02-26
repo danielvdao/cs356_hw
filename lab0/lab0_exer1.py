@@ -19,7 +19,7 @@ host = ip_addr
 psock = socket(AF_INET, SOCK_STREAM)
 
 # just take the port used for the client and add 1 to it
-psock.bind((host, port + 1))
+psock.bind((host, 0))
 psock.listen(1)
 # generating metadata
 username = 'D.V.Dao\n'

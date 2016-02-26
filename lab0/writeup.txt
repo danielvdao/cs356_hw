@@ -11,10 +11,10 @@ Server -> Client: CS 356 Server Thu Feb 25 21:31:05 CST 2016 OK 7679000
 Exercise 1: Listening for a new connection
 
 aero.cs.utexas.edu
-Client -> Server: ex1 128.83.144.56-35601 128.83.120.146-35647 8387 D.V.Dao
-Server -> Client: CS 356 Server Thu Feb 25 21:35:32 CST 2016
-Server -> Client: OK 8388 D.V.Dao 4255335
-Server -> Client: Connected to a client(128.83.120.146-35647)
-Server -> Client: CS 356 server calling 1666949
-Client -> Server(servernum+1 newservernum+1): 4255336 1666950
-Server -> Client: OK    6683287
+Client -> Server: ex1 128.83.144.56-35601 128.83.120.146-48803 7096 D.V.Dao
+Server -> Client: CS 356 Server Thu Feb 25 22:06:15 CST 2016
+Server -> Client: OK 7097 D.V.Dao 2008687
+Server -> Client: Connected to a client(128.83.120.146-48803)
+Server -> Client: CS 356 server calling 109747
+Client -> Server(servernum+1 newservernum+1): 2008688 109748
+Server -> Client: OK    238860
