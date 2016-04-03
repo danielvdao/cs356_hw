@@ -16,14 +16,14 @@ serverSocket.bind((host, serverPort))
 #the integer tells us how many connections can be waiting on this socket
 serverSocket.listen(1)
 
-print 'The server is ready to receive'
+print 'The server is ready to receive and the port number is' + str(serverPort)
 
 while 1:
     # addr contains the address of the client
     # addr is the IP and the port 
     connectionSocket, addr = serverSocket.accept()
     print 'Client address: ', addr
-
+    print 'connection socket port is ' +str( connectionSocket.getsockname()[1])
     # 1024 is the buffer size
     recv_sentence = connectionSocket.recv(1024)
 

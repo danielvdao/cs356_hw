@@ -6,7 +6,7 @@ import sys
 serverPort = 5000
 host = '127.0.0.1'
 clientsock = socket(AF_INET, SOCK_STREAM)
-clientsock.connect(('192.168.0.129', 50168))
+clientsock.connect(('127.0.0.1', serverPort))
 
 #number = sys.argv[1]
 send_sentence = 'Hi this is client, sending you number: ' + str((random.randint(0,9000))) + '\n'
